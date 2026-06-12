@@ -11,23 +11,23 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/apple-touch-icon.png"
+      href="../../../docs/assets/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/favicon-32x32.png"
+      href="../../../docs/assets/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/favicon-16x16.png"
+      href="../../../docs/assets/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <title>EaseMotion CSS — Documentation</title>
+    <link rel="manifest" href="../../../docs/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="../../../docs/assets/favicon.ico" />
+    <title>EaseMotion CSS — Documentation (Sidebar Animations Link Demo)</title>
     <meta
       name="description"
       content="Official documentation for EaseMotion CSS — the animation-first, human-readable CSS framework."
@@ -46,7 +46,10 @@
     />
 
     <!-- Link to external docs.css -->
-    <link rel="stylesheet" href="docs.css" />
+    <link rel="stylesheet" href="../../../docs/docs.css" />
+
+    <!-- Link to local style.css -->
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Apply stored theme before first paint to avoid flash -->
     <script>
@@ -55,13 +58,6 @@
         document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
-
-    <style>
-      /* ─────────────────────────────────────────────────────────
-         Any extra page-specific overrides can go here.
-         The main layout + mobile fix lives in docs.css
-      ───────────────────────────────────────────────────────── */
-    </style>
   </head>
 
   <body>
@@ -91,8 +87,12 @@
 
     <!-- ── Header ───────────────────────────────────────────── -->
     <header class="docs-header">
-      <a href="index.html" class="docs-logo">
-        <img src="assets/logo.svg" alt="EaseMotion CSS" class="docs-logo-img" />
+      <a href="demo.html" class="docs-logo">
+        <img
+          src="../../../docs/assets/logo.svg"
+          alt="EaseMotion CSS"
+          class="docs-logo-img"
+        />
       </a>
 
       <button
@@ -107,7 +107,9 @@
         <li><a href="#getting-started">Getting Started</a></li>
         <li><a href="#utilities">Utilities</a></li>
         <li><a href="#animations">Animations</a></li>
-        <li><a href="animations-preview.html">Animation Preview</a></li>
+        <li>
+          <a href="../../../docs/animations-preview.html">Animation Preview</a>
+        </li>
         <li><a href="#components">Components</a></li>
         <li>
           <a
@@ -119,7 +121,7 @@
         </li>
         <li>
           <a
-            href="demo.html"
+            href="../../../docs/demo.html"
             class="ease-btn ease-btn-primary ease-btn-sm ease-btn-pill"
             style="padding: 10px"
             >Live Demo →</a
@@ -193,7 +195,9 @@
             <li><a href="#dark-mode">Dark Mode</a></li>
             <li><a href="#utilities">Utilities</a></li>
             <li><a href="#animations">Animations</a></li>
-            <li><a href="animation-combo.html">Animation Builder</a></li>
+            <li>
+              <a href="../../../docs/animation-combo.html">Animation Builder</a>
+            </li>
           </ul>
         </div>
         <div class="sidebar-group">
@@ -508,18 +512,18 @@
   &lt;label class="ease-field-label" for="username"&gt;Username&lt;/label&gt;
   &lt;input class="ease-input" type="text" id="username" placeholder="Enter username"&gt;
 &lt;/div&gt;
-
+ 
 &lt;!-- Validation States --&gt;
 &lt;div class="ease-field ease-field-success"&gt;
   &lt;label class="ease-field-label"&gt;Email (Valid)&lt;/label&gt;
   &lt;input class="ease-input ease-input-success" type="email" value="user@domain.com"&gt;
 &lt;/div&gt;
-
+ 
 &lt;div class="ease-field ease-field-danger"&gt;
   &lt;label class="ease-field-label"&gt;Password (Error)&lt;/label&gt;
   &lt;input class="ease-input ease-input-danger" type="password" value="123"&gt;
 &lt;/div&gt;
-
+ 
 &lt;!-- Textarea and Select --&gt;
 &lt;textarea class="ease-textarea" placeholder="Your message..."&gt;&lt;/textarea&gt;
 &lt;select class="ease-select"&gt;
@@ -582,9 +586,10 @@
             localStorage.setItem("em-theme", targetTheme);
           });
 
-          transition.finished.finally(() => {
+          const onTransitionFinished = () => {
             html.removeAttribute("data-transition-theme");
-          });
+          };
+          transition.finished.then(onTransitionFinished, onTransitionFinished);
         } else {
           html.setAttribute("data-theme", targetTheme);
           localStorage.setItem("em-theme", targetTheme);

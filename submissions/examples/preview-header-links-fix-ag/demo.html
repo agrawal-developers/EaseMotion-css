@@ -7,49 +7,56 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/apple-touch-icon.png"
+      href="../../../docs/assets/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/favicon-32x32.png"
+      href="../../../docs/assets/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/favicon-16x16.png"
+      href="../../../docs/assets/favicon-16x16.png"
     />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <title>EaseMotion CSS — Animation Preview</title>
+    <link rel="manifest" href="../../../docs/assets/site.webmanifest" />
+    <link rel="shortcut icon" href="../../../docs/assets/favicon.ico" />
+    <title>EaseMotion CSS — Animation Preview (Header Links Fixed)</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css"
     />
-    <link rel="stylesheet" href="docs.css" />
+    <link rel="stylesheet" href="../../../docs/docs.css" />
+    <link rel="stylesheet" href="style.css" />
     <script>
       (function () {
         var t = localStorage.getItem("em-theme") || "dark";
         document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
-    <link rel="stylesheet" href="animations-preview.css?v=2" />
+    <link rel="stylesheet" href="../../../docs/animations-preview.css?v=2" />
   </head>
 
   <body>
     <!-- Header (reuse from docs) -->
     <header class="docs-header">
-      <a href="index.html" class="docs-logo">
-        <img src="assets/logo.svg" alt="EaseMotion CSS" class="docs-logo-img" />
+      <a href="../../../docs/index.html" class="docs-logo">
+        <img
+          src="../../../docs/assets/logo.svg"
+          alt="EaseMotion CSS"
+          class="docs-logo-img"
+        />
       </a>
       <ul class="docs-header-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../../../docs/index.html">Home</a></li>
         <li>
-          <a href="animations-preview.html" class="active">Animation Preview</a>
+          <a href="demo.html" class="active">Animation Preview</a>
         </li>
-        <li><a href="animation-combo.html">Animation Builder</a></li>
+        <li>
+          <a href="../../../docs/animation-combo.html">Animation Builder</a>
+        </li>
       </ul>
       <button
         id="theme-toggle"
